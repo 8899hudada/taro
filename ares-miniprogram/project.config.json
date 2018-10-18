@@ -1,0 +1,16 @@
+{
+	"miniprogramRoot": "dist/",
+	"projectname": "ares-miniprogram",
+	"description": "律师案件管理系统的小程序",
+	"appid": "wx1afe9ca14b62d2c5",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"condition": {}
+}
