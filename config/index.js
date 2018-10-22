@@ -48,7 +48,14 @@ const config = {
   defineConstants: {
   },
   weapp: {
-
+    postcss: {
+      url: {
+        enable: true,
+        config: {
+          limit: 10240 // 10kb 设定转换尺寸上限
+        }
+      },
+    },
   },
   h5: {
     publicPath: '/',
@@ -64,8 +71,10 @@ const config = {
 }
 
 module.exports = function (merge) {
-  if (process.env.NODE_ENV === 'development') {
-    return merge({}, config, require('./dev'))
+
+  if (process.env.NODE_ENV === 'production') {
+    return merge({}, config, require('./prod'))
   }
-  return merge({}, config, require('./prod'))
+
+  return merge({}, config, require(`./${process.env.ENV}`))
 }

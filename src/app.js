@@ -1,10 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
+
 import '@tarojs/async-await'
 import { Provider } from '@tarojs/redux'
-
-import Index from './pages/index'
-
 import configStore from './store'
+
+import Login from './pages/login/index'
 
 import './app.less'
 
@@ -14,28 +14,26 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+      'pages/login/index',
+      'pages/office/index',
+      'pages/message/index',
+      'pages/address/index',
+      'pages/me/index',
+      'pages/home/index',
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarBackgroundColor: '#005499',
+      navigationBarTitleText: '极案',
+      navigationBarTextStyle: '#fff',
+      enablePullDownRefresh: true
     }
   }
-
-  componentDidMount () {}
-
-  componentDidShow () {}
-
-  componentDidHide () {}
-
-  componentCatchError () {}
 
   render () {
     return (
       <Provider store={store}>
-        <Index />
+        <Login />
       </Provider>
     )
   }
